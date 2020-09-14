@@ -23,16 +23,42 @@ namespace A01LajtosDavid
                 atmeneti = Console.ReadLine().Split();
                 for (int j = 0; j < oszlop; j++)
                 {
-                    tomb[j] = Convert.ToInt32(atmeneti[j]);
+                    tomb[i] = Convert.ToInt32(atmeneti[j]);
                 }
                 i++;
             }
             sr.Close();
         }
 
+        static void kiiras()
+        {
+            for (int i = 0; i < oszlop; i++)
+            {
+                Console.WriteLine(tomb[i]);
+            }
+        }
+        static int max = tomb[0];
+        static int Maximumertek(int max)
+        {
+            int maximum = tomb[0];
+            for (int i = 0; i < oszlop; i++)
+            {
+                if (tomb[i] > maximum)
+                {
+                    maximum = tomb[i];
+                }
+            }
+            Console.WriteLine("A maximum: {0}", Maximumertek(maximum));
+
+            return max;
+        }
+        
+
         static void Main(string[] args)
         {
             beol();
+            kiiras();
+            Maximumertek(max);
 
 
         }
